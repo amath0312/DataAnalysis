@@ -62,14 +62,14 @@ def run_main():
                 pass
 
     # 将结果写入文件
-    with open('gender_country.csv', 'w', newline='', encoding='utf-16') as csvfile:
+    with open('gender_country.csv', 'w', newline='', encoding='utf-8') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
         # 写入表头
         csvwriter.writerow(['国家', '男性', '女性'])
 
         # 写入统计结果
         for k, v in list(result_dict.items()):
-            csvwriter.writerow([k, v[0], v[1]])
+            csvwriter.writerow([k, v[1], v[0]])
 
 if __name__ == '__main__':
     run_main()
